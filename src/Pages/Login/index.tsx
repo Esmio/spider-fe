@@ -24,7 +24,7 @@ const tailLayout = {
 };
 
 const LoginForm = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState<responseResult.isLogin>(false);
 
   const onFinish = (values: Store): void => {
     console.log('Success:', values);
@@ -41,7 +41,7 @@ const LoginForm = () => {
         }
       )
       .then((res) => {
-        const data: boolean = res.data;
+        const data: responseResult.login = res.data;
         if (data) {
           setIsLogin(true);
         } else {
